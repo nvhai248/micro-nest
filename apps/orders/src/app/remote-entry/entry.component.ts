@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { OrderListComponent } from '../components/order-list.component';
 
 @Component({
-    imports: [CommonModule, NxWelcomeComponent],
+    standalone: true,
+    imports: [CommonModule, OrderListComponent],
     selector: 'mfe-order-entry',
-    template: `<mfe-order-nx-welcome></mfe-order-nx-welcome>`,
+    template: `
+      <div class="container mt-4">
+        <h2>Order Management</h2>
+        <mfe-order-list></mfe-order-list>
+      </div>
+    `,
 })
 export class RemoteEntryComponent {}
